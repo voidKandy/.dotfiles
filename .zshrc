@@ -1,8 +1,9 @@
 alias nv="nvim"
 alias mybin="~/mybin"
 alias gdir='~/Documents/GitHub'
+alias dfs="~/Documents/GitHub/.dotfiles"
 alias zrc="nvim ~/.zshrc"
-alias nvc='~/.config/nvim'
+alias nvc="nvim ~/Documents/GitHub/.dotfiles/nvim"
 alias tmK="tmux kill-session"
 
 # Homebrew path for ARM mac 
