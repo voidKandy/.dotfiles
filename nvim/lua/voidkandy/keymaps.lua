@@ -17,7 +17,7 @@ vim.keymap.set("n", "<Leader>so", ":source %<CR>", { desc = "Open parent directo
 
 
 -- oil
--- vim.keymap.set("n", "<Leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<Leader>ee", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<Leader>e", ":lua require('oil').toggle_float(nil)<CR>", { desc = "Open parent directory in float" })
 vim.keymap.set("n", "<Leader>vs", ":vspl<CR>")
 vim.keymap.set("n", "<Leader>hs", ":spl<CR>")
