@@ -81,6 +81,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    -- vim.keymap.set('n', '<Leader>hi', vim.lsp.inlay_hint.get(bufnr), bufopts)
     -- vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<Leader>wl', function()
@@ -101,24 +102,38 @@ lsp_zero.new_client({
     name = 'espx-copilot',
     autostart = 'true',
     cmd = { 'espx-copilot' },
-    filetypes = { 'html' },
+    filetypes = { 'html', 'text', 'rust' },
     root_dir = function()
         return lsp_zero.dir.find_first({ 'markerfile.txt' })
     end
 })
 
 
-lsp_zero.setup_servers({ 'tsserver', 'rust_analyzer', "cssls", "lua_ls", "html", "pylsp", "svelte", "gopls",
+lsp_zero.setup_servers({ 'tsserver', 'rust_analyzer', "cssls", "lua_ls", "html", "pylsp", "svelte", "gopls", "htmx",
     "espx-copilot",
-    -- "htmx",
 })
 
 
+-- Espx Client stuff
+vim.lsp.handlers["window/showMessage"] = function(_, result, ctx)
+    local notify = require("notify")
+    notify.setup({
+        background_colour = "#000000",
+        render = "wrapped-compact",
+        timeoute = 100,
+    })
+    -- Call the function to show the floating window
+    -- EspxCopilotWindow()
 
--- vim.lsp.start({
---     name = '_hslsp',
---     autostart = 'true',
---     cmd = { '_hslsp' },
---     filetypes = { 'html, _hs' },
---     root_dir = vim.fs.dirname(vim.fs.find({ 'marketfile.txt' }, { upward = true })[1]),
--- })
+    local function keysToString(tbl)
+        local keyString = ""
+        for key, _ in pairs(tbl) do
+            keyString = keyString .. key .. ", "
+        end
+        -- Remove the trailing comma and space
+        keyString = keyString:gsub(", $", "")
+        return keyString
+    end
+
+    notify(result.message)
+end

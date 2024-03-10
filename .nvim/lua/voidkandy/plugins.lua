@@ -24,6 +24,7 @@ vim.cmd([[
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+    use { 'nvim-telescope/telescope-ui-select.nvim' }
     use { 'srcery-colors/srcery-vim', as = 'srcery', }
     -- :TransparentEnable
     -- :TransparentDisable
@@ -95,11 +96,16 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        requires = { { 'nvim-lua/plenary.nvim' } },
+        requires = { 'nvim-lua/plenary.nvim' },
         require('telescope').setup {
+            extensions = {
+                ["ui-select"] = {
+                    require("telescope.themes").get_dropdown {}
+                }
+            },
             file_ignore_patterns = { "*/netrw/*" }
-        }
-    }
+        } }
+    require("telescope").load_extension("ui-select")
 
     use({
         "stevearc/conform.nvim",
@@ -159,6 +165,8 @@ return require('packer').startup(function(use)
         }
     }
 
+    use 'voldikss/vim-floaterm'
+    use 'rcarriga/nvim-notify'
 
 
     -- Put this at the end after all plugins

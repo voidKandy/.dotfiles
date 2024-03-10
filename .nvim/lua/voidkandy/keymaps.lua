@@ -25,6 +25,11 @@ vim.keymap.set("n", "<Leader>qw", ":wq<CR>")
 vim.keymap.set("n", "<Leader>qq", ":q<CR>")
 
 
+-- Floaterm
+-- NEEDS SOME CONFIG
+vim.keymap.set("n", "<Leader>ftg", ":FloatermToggle --cmd='lazygit'<CR>")
+vim.keymap.set("n", "<Leader>ft", ":FloatermToggle <CR>")
+
 -- undotree
 vim.keymap.set('n', '<Leader>u', vim.cmd.UndotreeToggle)
 
