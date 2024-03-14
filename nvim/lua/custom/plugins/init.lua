@@ -12,6 +12,26 @@ return {
   { 'rcarriga/nvim-notify' },
 
   {
+    'm4xshen/autoclose.nvim',
+    config = function()
+      require('autoclose').setup {
+        options = {
+          disabled_filetypes = { 'text', 'markdown' },
+        },
+      }
+    end,
+  },
+
+  {
+    'startup-nvim/startup.nvim',
+    requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+    config = function()
+      -- require "custom.plugins.configs.startup"
+      require "startup".setup()
+    end,
+  },
+
+  {
     'stevearc/oil.nvim',
     config = function()
       require('oil').setup {

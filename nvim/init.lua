@@ -673,7 +673,7 @@ require('lazy').setup({
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
       -- BELOW MAKES BACKGROUND TRANSPARENT
-      -- vim.cmd.hi 'normal ctermbg=NONE guibg=NONE'
+      vim.cmd.hi 'normal ctermbg=NONE guibg=NONE'
     end,
   },
 

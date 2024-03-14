@@ -8,7 +8,7 @@ if not configs.espx_copilot then
       name = 'espx_copilot',
       autostart = true,
       cmd = { 'espx-copilot' },
-      filetypes = { 'text' },
+      filetypes = { 'text', 'rust' },
       root_dir = function()
         return vim.fs.dirname(vim.fs.find({ 'markerfile.txt' }, { upward = true })[1])
       end
