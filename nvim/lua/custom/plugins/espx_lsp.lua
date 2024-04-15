@@ -8,9 +8,10 @@ if not configs.espx_copilot then
       name = 'espx_copilot',
       autostart = true,
       cmd = { 'espx-copilot' },
-      filetypes = { 'text', 'rust' },
+      -- MUST INCLUDE MARKDOWN
+      filetypes = { 'text', 'rust', 'markdown' },
       root_dir = function()
-        return vim.fs.dirname(vim.fs.find({ 'markerfile.txt' }, { upward = true })[1])
+        return vim.fs.dirname(vim.fs.find({ 'espx-ls.toml' }, { upward = true })[1])
       end
     },
   }
@@ -30,4 +31,5 @@ vim.lsp.handlers['window/showMessage'] = function(_, result, ctx)
   }
   notify(result.message)
 end
+
 return {}
