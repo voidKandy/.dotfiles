@@ -1,0 +1,44 @@
+# See all options here: https://alacritty.org/config-alacritty.html
+
+# All imports must either be absolute paths starting with `/`, or paths relative
+# to the user's home directory starting with `~/`.
+import = [
+  "~/.config/alacritty/themes/catppuccin-frappe.toml"
+]
+[window]
+  padding = { x = 15, y = 18 }
+  dynamic_padding = true
+  decorations = "Buttonless"
+  opacity = 0.85
+  blur = true
+  startup_mode = "Maximized"
+  dynamic_title = true
+
+[scrolling]
+  history = 10000
+  # Scrolling distance multiplier.
+  #multiplier: 3
+
+[font]
+  size = 14
+
+  normal = { family = "Agave Nerd Font Propo", style = "Regular" }
+  # If the family is not specified, it will fall back to the
+  # value specified for the normal font.
+  bold = { style = "Bold" }
+  italic = { style =  "Italic" }
+  bold_italic = { style = "Bold Italic" }
+
+
+[cursor]
+  # Cursor style
+  style = { shape = "Block", blinking = "Always" }
+  blink_interval = 600
+  unfocused_hollow= true
+
+[keyboard]
+  bindings = [
+  { key = "Space", mods = "Command | Control", mode = "Search", action = "ToggleViMode" },
+  # { key= "6", mods = "Control", chars = "\x1e" },
+  # { key = "9", mods = "Command", action = "ResetFontSize" } 
+]

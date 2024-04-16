@@ -10,7 +10,8 @@ return {
     vim.cmd.colorscheme 'tokyonight-moon'
     -- You can configure highlights by doing something like:
     vim.cmd.hi 'Comment gui=none'
+    vim.cmd.hi 'LineNr term=bold ctermfg=white guifg=grey'
     -- BELOW MAKES BACKGROUND TRANSPARENT
-    -- vim.cmd.hi 'normal ctermbg=NONE guibg=NONE'
+    vim.cmd.hi 'normal ctermbg=NONE guibg=NONE'
   end,
 }
