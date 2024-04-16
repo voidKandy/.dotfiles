@@ -3,8 +3,8 @@ local opts = {
   noremap = true, -- non-recursive
   silent = true,  -- do not show message
 }
-
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -----------------
 -- Normal mode --
@@ -12,6 +12,7 @@ vim.g.mapleader = ' '
 
 -- netrw
 -- vim.keymap.set('n', '<Leader>e', ':E <CR>', opts)
+
 
 -- oil
 vim.keymap.set('n', '<Leader>e', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
@@ -21,10 +22,30 @@ vim.keymap.set('n', '<Leader>hs', ':spl<CR>')
 vim.keymap.set('n', '<Leader>qw', ':wq<CR>')
 vim.keymap.set('n', '<Leader>qq', ':q<CR>')
 
+-- TIP: Disable arrow keys in normal mode
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
 -- Floaterm
 -- NEEDS SOME CONFIG
-vim.keymap.set('n', '<Leader>tg', ":FloatermNew lazygit <CR>")
+vim.keymap.set('n', '<Leader>tg', ':FloatermNew lazygit <CR>')
 vim.keymap.set('n', '<Leader>tf', ':FloatermToggle <CR>')
+
+-- Glow markdown viewer
+vim.keymap.set('n', '<Leader>tm', function()
+  local current_filename = vim.fn.expand('%:p')
+  if string.find(current_filename, ".md") then
+    vim.cmd('vsplit')
+    local win = vim.api.nvim_get_current_win()
+    local buf = vim.api.nvim_create_buf(true, true)
+    vim.api.nvim_win_set_buf(win, buf)
+    vim.cmd(string.format('term glow %s', current_filename))
+  else
+    print("Current file is not markdown :(")
+  end
+end)
 
 -- undotree
 vim.keymap.set('n', '<Leader>u', vim.cmd.UndotreeToggle)
@@ -67,6 +88,18 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+vim.keymap.set('n', '<leader>th', ':Telescope colorscheme<CR>')
 -----------------
 -- Visual mode --
 -----------------
@@ -78,3 +111,11 @@ vim.keymap.set('v', '>', '>gv', opts)
 -----------------
 -- Insert mode --
 -----------------
+--
+--
+--
+-----------------
+--    Other    --
+-----------------
+
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

@@ -8,8 +8,7 @@ if not configs.espx_copilot then
       name = 'espx_copilot',
       autostart = true,
       cmd = { 'espx-copilot' },
-      -- MUST INCLUDE MARKDOWN
-      filetypes = { 'text', 'rust', 'markdown' },
+      filetypes = { 'text', 'rust' },
       root_dir = function()
         return vim.fs.dirname(vim.fs.find({ 'espx-ls.toml' }, { upward = true })[1])
       end
