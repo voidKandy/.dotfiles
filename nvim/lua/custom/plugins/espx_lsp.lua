@@ -6,9 +6,9 @@ local configs = require 'lspconfig.configs'
 if not configs.espx_copilot then
   configs.espx_copilot = {
     default_config = {
-      name = 'espx_copilot',
+      name = 'espx-ls',
       autostart = true,
-      cmd = { 'espx-copilot' },
+      cmd = { 'espx-ls' },
       filetypes = { 'text', 'rust' },
       root_dir = function()
         return vim.fs.dirname(vim.fs.find({ 'espx-ls.toml' }, { upward = true })[1])

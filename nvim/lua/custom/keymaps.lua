@@ -13,14 +13,15 @@ vim.g.maplocalleader = ' '
 -- netrw
 -- vim.keymap.set('n', '<Leader>e', ':E <CR>', opts)
 
-
 -- oil
 vim.keymap.set('n', '<Leader>e', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
--- vim.keymap.set('n', '<Leader>e', ":lua require('oil').toggle_float(nil)<CR>", { desc = 'Open parent directory in float' })
+
+-- splits
 vim.keymap.set('n', '<Leader>vs', ':vspl<CR>')
 vim.keymap.set('n', '<Leader>hs', ':spl<CR>')
-vim.keymap.set('n', '<Leader>qw', ':wq<CR>')
-vim.keymap.set('n', '<Leader>qq', ':q<CR>')
+
+-- Treesitter builtins
+vim.keymap.set('n', '<Leader>tsi', ':InspectTree<CR>')
 
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
