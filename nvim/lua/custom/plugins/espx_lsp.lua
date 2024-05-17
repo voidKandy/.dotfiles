@@ -9,7 +9,7 @@ if not configs.espx_copilot then
       name = 'espx-ls',
       autostart = true,
       cmd = { 'espx-ls' },
-      filetypes = { 'text', 'rust' },
+      filetypes = { 'text', 'rust', 'javascript' },
       root_dir = function()
         return vim.fs.dirname(vim.fs.find({ 'espx-ls.toml' }, { upward = true })[1])
       end

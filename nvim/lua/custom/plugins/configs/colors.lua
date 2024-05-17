@@ -14,8 +14,9 @@ return {
     vim.cmd.hi 'Comment gui=none'
     vim.cmd.hi 'LineNr term=bold ctermfg=white guifg=grey'
     -- BELOW MAKES BACKGROUND TRANSPARENT
-    vim.cmd.hi 'Normal ctermbg=NONE guibg=NONE'
-    vim.cmd.hi 'NormalNC ctermbg=NONE guibg=NONE'
+
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "None" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none", ctermbg = "None" })
 
     vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
     vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "none" })
@@ -25,6 +26,7 @@ return {
     vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "none" })
     vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
 
     -- vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
   end,
