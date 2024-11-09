@@ -11,7 +11,7 @@ vim.g.maplocalleader = ' '
 -----------------
 
 -- netrw
--- vim.keymap.set('n', '<Leader>e', ':E <CR>', opts)
+-- vim.keymap.set('n', '<Leader>e', ':Explore <CR>', opts)
 
 -- oil
 vim.keymap.set('n', '<Leader>e', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
@@ -33,6 +33,7 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- NEEDS SOME CONFIG
 vim.keymap.set('n', '<Leader>tg', ':FloatermNew lazygit <CR>')
 vim.keymap.set('n', '<Leader>tf', ':FloatermToggle <CR>')
+
 
 -- Glow markdown viewer
 vim.keymap.set('n', '<Leader>tm', function()
@@ -101,6 +102,38 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 vim.keymap.set('n', '<leader>th', ':Telescope colorscheme<CR>')
+
+-- Obsidian
+vim.keymap.set("n", "<leader>og", function()
+  local current_filename = vim.fn.expand('%:p')
+  if string.find(current_filename, ".md") then
+    vim.cmd('normal! "tyy');
+    local yanked_content = string.sub(vim.fn.getreg('t'), 1, -2)
+    local sed_filter = "s/^[^a-zA-Z0-9]*\\(.*\\)[^a-zA-Z0-9/]*$/\\1/"
+    local sed_command = string.format("echo '%s' | sed '%s'", yanked_content, sed_filter)
+    local result = vim.fn.system(sed_command)
+    local cleaned_result = string.gsub(result, "[^a-zA-Z0-9/]", "")
+    vim.print(string.format("Searching for tag: %s", cleaned_result))
+
+    local tags_command = string.format('ObsidianTags %s', cleaned_result)
+    vim.cmd(tags_command)
+  else
+    print("Current file is not markdown :(")
+  end
+end)
+
+vim.keymap.set("n", "<leader>oc", "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>",
+  { desc = "toggle checkbox in obsidian document" })
+vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>", { desc = "Insert Obsidian Template" })
+vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open in Obsidian App" })
+vim.keymap.set("n", "<leader>od", "<cmd>ObsidianToday<CR>", { desc = "Open Today's note" })
+vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Show Obsidian BackLinks" })
+vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLinks<CR>", { desc = "Show ObsidianLinks" })
+vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "New Obsidian Note" })
+vim.keymap.set("n", "<leader>os", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian" })
+vim.keymap.set("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", { desc = "QuickSwitch Obsidian" })
+
+
 -----------------
 -- Visual mode --
 -----------------

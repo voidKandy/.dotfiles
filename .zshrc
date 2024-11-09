@@ -1,10 +1,7 @@
 alias nv="nvim"
 alias mybin="~/mybin"
-alias gdir='~/Documents/GitHub'
-alias dfs="~/Documents/GitHub/.dotfiles"
-alias zrc="nvim ~/.zshrc"
-alias nvc="nvim ~/Documents/GitHub/.dotfiles/nvim"
-alias tmK="tmux kill-session"
+alias air="~/go/bin/air"
+alias obs="~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Ω"
 
 # Homebrew path for ARM mac 
 HOMEBREW_PREFIX=$(brew --prefix)
@@ -19,7 +16,9 @@ export PATH=${PATH}:/usr/local/mysql/bin/
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/mambaforge/bin:$PATH
+export PATH=`go env GOPATH`/bin:$PATH
 export PATH=$HOME/mybin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -118,3 +117,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
+export PATH="$PATH:/Users/ezrafreeman/.modular/bin"
