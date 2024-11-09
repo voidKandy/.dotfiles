@@ -1,7 +1,6 @@
 #!/bin/zsh                                                                                                   
 
 SESSIONNAME="home"
-# I cant source from .zshrc for some reason when i start the server
 tmux has-session -t $SESSIONNAME &> /dev/null
 
 if [ $? != 0 ] 
