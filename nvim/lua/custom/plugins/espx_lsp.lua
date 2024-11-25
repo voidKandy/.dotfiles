@@ -10,7 +10,7 @@ if not configs.espx_ls then
       cmd = { 'espx-ls' },
       filetypes = { 'text', 'rust', 'javascript', "html", "go", "htmldjango" },
       root_dir = function()
-        return vim.fs.dirname(vim.fs.find({ 'espx-ls.toml' }, { upward = true })[1])
+        return vim.fs.dirname(vim.fs.find({ '.espx' }, { upward = true })[1])
       end
     },
   }

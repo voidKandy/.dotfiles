@@ -39,7 +39,10 @@ import = [
 
 [keyboard]
   bindings = [
-  { key = "Space", mods = "Command | Control", mode = "Search", action = "ToggleViMode" },
+    { key = "Space", mods = "Command | Control", mode = "Search", action = "ToggleViMode" },
+    { key= "Numpad0", mods= "None", mode="vi", action= "ResetFontSize" },
+    { key= "ArrowUp", mods= "None", mode="vi", action= "IncreaseFontSize" },
+    { key= "ArrowDown", mods= "None", mode="vi", action= "DecreaseFontSize" },
   # { key= "6", mods = "Control", chars = "\x1e" },
   # { key = "9", mods = "Command", action = "ResetFontSize" } 
 ]
