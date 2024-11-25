@@ -79,5 +79,20 @@ if [ $? != 0 ]
     tmux select-window -t $PRATTL:zsh
 fi
 
+LLMCHAIN="llmchain"
+tmux has-session -t $LLMCHAIN &> /dev/null
+# prattl, prattl-web, go-pyenv
+
+if [ $? != 0 ] 
+ then
+    tmux new-session -s $LLMCHAIN -n zsh -d
+    tmux send-keys -t $LLMCHAIN:zsh "proj;cd llm_chain;clear;tree -L 2" C-m 
+
+    tmux new-window -t $LLMCHAIN -n nvim
+    tmux send-keys -t $LLMCHAIN:nvim "proj;cd llm_chain;clear;nvim" C-m 
+
+    tmux select-window -t $LLMCHAIN:zsh
+fi
+
 tmux attach -t $HOMESESSION
 

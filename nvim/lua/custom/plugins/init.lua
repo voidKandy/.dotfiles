@@ -9,6 +9,8 @@ return {
   require 'custom.plugins.configs.oil',
   require 'custom.plugins.configs.delay',
   require 'custom.plugins.configs.obsidian',
+  require 'custom.plugins.configs.smear',
+  require 'custom.plugins.configs.harpoon',
 
 
   { 'mbbill/undotree' },
@@ -85,4 +87,6 @@ return {
     end,
     after = 'nvim-treesitter',
   },
+
+
 }

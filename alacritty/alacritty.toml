@@ -21,7 +21,7 @@ import = [
   #multiplier: 3
 
 [font]
-  size = 21
+  size = 34
 
   normal = { family = "Agave Nerd Font Propo", style = "Regular" }
   # If the family is not specified, it will fall back to the
