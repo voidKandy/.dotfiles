@@ -29,11 +29,8 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- Zoom in (increase font size)
-vim.keymap.set('n', '<C-+>', ':resize +1<CR>')
+vim.keymap.set('n', '<C-m>', "<C-d>")
 
--- Zoom out (decrease font size)
-vim.keymap.set('n', '<C-->', ':lua vim.o.guifontsize = vim.o.guifontsize - 1<CR>')
 
 
 -- Floaterm
