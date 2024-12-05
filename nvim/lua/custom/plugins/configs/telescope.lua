@@ -32,6 +32,26 @@ return {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
+
+      },
+
+      defaults = {
+        layout_strategy = "flex",
+        -- layout_config = {
+        --   cursor = {
+        --     width = ,
+        --     height = 1,
+        --   },
+        --   -- other layout configuration here
+        -- },
+      },
+      pickers = {
+        find_files = {
+          theme = "dropdown",
+        },
+        live_grep = {
+          theme = "dropdown",
+        }
       },
     }
 

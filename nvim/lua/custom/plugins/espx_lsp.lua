@@ -8,7 +8,9 @@ if not configs.espx_ls then
       name = 'espx-ls',
       autostart = true,
       cmd = { 'espx-ls' },
-      filetypes = { 'text', "sh", 'rust', 'javascript', "html", "go", "htmldjango" },
+      filetypes = {
+        "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue",
+        "svelte", 'text', "sh", 'rust', 'javascript', "html", "go", "htmldjango" },
       root_dir = function()
         return vim.fs.dirname(vim.fs.find({ '.espx' }, { upward = true })[1])
       end
