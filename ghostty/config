@@ -1,0 +1,21 @@
+# https://ghostty.org/docs/config/reference
+
+background = 282c34
+background-opacity = 0.8
+background-blur-radius = 20
+
+font-size = 20
+
+window-padding-balance = true
+window-padding-x = 8
+window-padding-y = 8 
+
+window-decoration = false
+
+shell-integration = zsh
+
+# Keybinds
+keybind = opt+k=unbind
+keybind = opt+j=unbind
+
+

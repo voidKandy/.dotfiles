@@ -21,7 +21,7 @@ import = [
   #multiplier: 3
 
 [font]
-  size = 34
+  size = 22
 
   normal = { family = "Agave Nerd Font Propo", style = "Regular" }
   # If the family is not specified, it will fall back to the
@@ -39,6 +39,7 @@ import = [
 
 [keyboard]
   bindings = [
+  # Ctl - shift - space to enter vi mode
     { key = "Space", mods = "Command | Control", mode = "Search", action = "ToggleViMode" },
     { key= "Numpad0", mods= "None", mode="vi", action= "ResetFontSize" },
     { key= "ArrowUp", mods= "None", mode="vi", action= "IncreaseFontSize" },
