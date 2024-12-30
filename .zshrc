@@ -4,6 +4,7 @@ alias air="~/go/bin/air"
 alias obs="~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Ω"
 alias proj="~/Documents/projects"
 
+
 # Homebrew path for ARM mac 
 HOMEBREW_PREFIX=$(brew --prefix)
 export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"

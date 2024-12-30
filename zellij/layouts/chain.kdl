@@ -1,0 +1,17 @@
+layout {
+   default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="Chain" cwd="~/Documents/projects/llm_chain" 
+    tab name="Chain NV" cwd="~/Documents/projects/llm_chain" 
+    tab name="Client" cwd="~/Documents/projects/llm_chain/client" 
+    tab name="Server" cwd="~/Documents/projects/llm_chain/server" 
+    tab name="Seraphic" cwd="~/Documents/projects/seraphic" 
+}
+

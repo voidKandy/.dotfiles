@@ -1,0 +1,25 @@
+// https://github.com/zellij-org/zellij/blob/main/example/config.kdl
+// Default Themes:
+// https://zellij.dev/documentation/theme-list
+theme "everforest-dark"
+pane_frames false
+simplified_ui true
+scrollback_editor "/opt/homebrew/bin/nvim"
+
+keybinds {
+     normal {
+        bind "Ctrl m" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }        
+
+        bind "Ctrl l" {
+            ToggleFloatingPanes;
+            Resize "increase";
+            Run "lazygit";
+        }
+    }
+}

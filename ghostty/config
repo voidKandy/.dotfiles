@@ -1,6 +1,6 @@
 # https://ghostty.org/docs/config/reference
 
-background = 282c34
+background = 121313
 background-opacity = 0.8
 background-blur-radius = 20
 
@@ -14,8 +14,8 @@ window-decoration = false
 
 shell-integration = zsh
 
-# Keybinds
-keybind = opt+k=unbind
-keybind = opt+j=unbind
+
+
+
 
 
