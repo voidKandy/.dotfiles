@@ -16,10 +16,11 @@ keybinds {
             SwitchToMode "Normal"
         }        
 
-        bind "Ctrl l" {
-            ToggleFloatingPanes;
-            Resize "increase";
+    }
+    pane {
+        bind "g" {
             Run "lazygit";
+            SwitchToMode "normal";
         }
     }
 }
