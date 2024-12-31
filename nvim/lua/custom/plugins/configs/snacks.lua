@@ -6,9 +6,11 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
+		scope = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
 		notifier = {
+			level = "warn",
 			enabled = true,
 			timeout = 3000,
 		},

@@ -10,9 +10,13 @@ window-padding-balance = true
 window-padding-x = 8
 window-padding-y = 8 
 
+
 window-decoration = false
 
 shell-integration = zsh
+
+theme = Apple Classic
+custom-shader = /Users/ezrafreeman/.dotfiles/ghostty_crt/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
 
 
 

@@ -42,7 +42,7 @@ vim.opt.shiftwidth = 4 -- insert 4 spaces on a tab
 vim.opt.expandtab = true -- tabs are spaces, mainly because of python
 
 -- UI config
-vim.opt.signcolumn = "no" -- Yucky bar on the left side
+vim.opt.signcolumn = "yes" -- Yucky bar on the left side
 vim.opt.number = true -- show absolute number
 vim.opt.relativenumber = true -- add numbers to each line on the left side
 vim.opt.cursorline = true -- highlight cursor line underneath the cursor horizontally
@@ -78,9 +78,9 @@ vim.opt.conceallevel = 2
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = { "*.md" },
 	callback = function()
-		-- vim.opt.textwidth = 120
 		vim.opt.wrap = true
 		vim.opt.spell = true
+		-- vim.opt.textwidth = 120
 	end,
 })
 
