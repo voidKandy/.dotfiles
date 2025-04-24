@@ -7,7 +7,7 @@ if not configs.espx_ls then
 			name = "espx_ls",
 			autostart = true,
 			cmd = { "espx-ls" },
-			filetypes = { "rust" },
+			filetypes = { "text", "rust" },
 			root_dir = function()
 				-- this markerfile should be put in the root directory of any project you want to use with this LSP
 				return vim.fs.dirname(vim.fs.find({ ".espx" }, { upward = true })[1])

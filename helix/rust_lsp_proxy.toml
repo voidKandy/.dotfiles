@@ -1,0 +1,9 @@
+log-file = "/tmp/rust-multi-lsp.log"
+
+[[language]]
+name = "rust"
+command = "rust-analyzer"
+
+[[language]]
+name = "knowls"
+command = "knowls"

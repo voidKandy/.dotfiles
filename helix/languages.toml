@@ -1,0 +1,97 @@
+# https://docs.helix-editor.com/languages.html
+# [[language]]
+# name = "mylang"
+# scope = "source.mylang"
+# injection-regex = "mylang"
+# file-types = ["mylang", "myl"]
+# comment-tokens = "#"
+# indent = { tab-width = 2, unit = "  " }
+# formatter = { command = "mylang-formatter" , args = ["--stdin"] }
+# language-servers = [ "mylang-lsp" ]
+
+# [language-server.rust-multi]
+# command = "multi-lsp"
+# args = ["--config", "/Users/ezrafreeman/.config/helix/rust_lsp_proxy.toml"]
+
+# [[language]]
+# name = "rust"
+# scope = "source.rust"
+# injection-regex = "rs|rust"
+# file-types = ["rs"]
+# roots = ["Cargo.toml", "Cargo.lock"]
+# shebangs = ["rust-script", "cargo"]
+# auto-format = true
+# comment-tokens = ["//", "///", "//!"]
+# block-comment-tokens = [
+#   { start = "/*", end = "*/" },
+#   { start = "/**", end = "*/" },
+#   { start = "/*!", end = "*/" },
+# ]
+# language-servers = ["rust-multi"]
+# indent = { tab-width = 4, unit = "    " }
+# persistent-diagnostic-sources = ["rustc", "clippy"]
+
+
+[[language]]
+name = "python"
+scope = "source.python"
+injection-regex = "py(thon)?"
+file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { glob = ".python_history" }, { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "*SConstruct" }, { glob = "*SConscript" }, { glob = "*sconstruct" }]
+formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
+auto-format = true
+shebangs = ["python", "uv"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json, uv.lock"]
+comment-token = "#"
+language-servers = ["ruff", "jedi", "pylsp"]
+# TODO: pyls needs utf-8 offsets
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "markdown"
+scope = "text.md.basic"
+file-types = ["md"]
+soft-wrap= { enable = true, wrap-at-text-width = true}
+
+[language-server.htmx]
+command = "htmx-lsp"
+
+[[language]]
+name = "html"
+scope = "text.html.basic"
+injection-regex = "html"
+file-types = ["html", "htm", "shtml", "xhtml", "xht", "jsp", "asp", "aspx", "jshtm", "volt", "rhtml", "cshtml"]
+block-comment-tokens = { start = "<!--", end = "-->" }
+language-servers = [ "vscode-html-language-server", "superhtml", "htmx" ]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "html"
+source = { git = "https://github.com/tree-sitter/tree-sitter-html", rev = "29f53d8f4f2335e61bf6418ab8958dac3282077a" }
+
+[[language]]
+name = "javascript"
+scope = "source.js"
+file-types = ["js"]
+auto-format = true
+formatter = { command = '/opt/homebrew/lib/node_modules/prettier/bin/prettier.cjs', args = ["--parser", "javascript"] }
+
+[[language]]
+name = "typescript"
+scope = "source.ts"
+file-types = ["ts"]
+auto-format = true
+formatter = { command = '/opt/homebrew/lib/node_modules/prettier/bin/prettier.cjs', args = ["--parser", "typescript"] }
+
+# knowls stuff
+[language-server.knowls]
+command = "knowls"
+
+[[language]]
+name = "text"
+scope = "text.txt"
+file-types = ["txt"]
+roots = [".knowls"]
+language-servers = [ "knowls" ]
+
+

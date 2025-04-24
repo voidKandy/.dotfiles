@@ -4,7 +4,7 @@
 theme "everforest-dark"
 pane_frames false
 simplified_ui true
-scrollback_editor "/opt/homebrew/bin/nvim"
+scrollback_editor "/opt/homebrew/bin/hx"
 
 keybinds {
      normal {
@@ -14,7 +14,10 @@ keybinds {
                 move_to_focused_tab true
             };
             SwitchToMode "Normal"
-        }        
+        }
+
+// these are nice so should be rebound
+        unbind "Alt i" "Alt o"
 
     }
     pane {

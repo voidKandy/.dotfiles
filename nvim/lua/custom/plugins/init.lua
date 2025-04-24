@@ -12,4 +12,6 @@ return {
 	require("custom.plugins.configs.diff_view"),
 	require("custom.plugins.configs.snacks"),
 	"mbbill/undotree",
+	"iamcco/markdown-preview.nvim",
+	"jetzig-framework/zmpl.vim",
 }

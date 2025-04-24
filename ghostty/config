@@ -15,8 +15,8 @@ window-decoration = false
 
 shell-integration = zsh
 
-theme = Apple Classic
-custom-shader = /Users/ezrafreeman/.dotfiles/ghostty_crt/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
+theme = Earthsong
+# custom-shader = /Users/ezrafreeman/.dotfiles/ghostty_crt/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
 
 
 

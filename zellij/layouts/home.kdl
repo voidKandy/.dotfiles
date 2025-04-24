@@ -9,8 +9,9 @@ layout {
         }
     }
     tab name="Obsidian" cwd="~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Ω" 
+
+    tab name="audio_journal" cwd="~/Library/Mobile Documents/iCloud~md~obsidian/audio_journal" 
     tab name="Dotfiles" cwd="~/.dotfiles" 
-    tab name="Desktop" cwd="~/Destkop" 
     tab name="Downloads" cwd="~/Downloads" 
     tab name="Projects" cwd="~/Documents/projects" 
     tab name="Projects NV" cwd="~/Documents/projects" command="tree" 

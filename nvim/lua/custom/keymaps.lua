@@ -31,11 +31,6 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 vim.keymap.set("n", "<C-m>", "<C-d>")
 
--- Floaterm
--- NEEDS SOME CONFIG
-vim.keymap.set("n", "<Leader>tg", ":FloatermNew lazygit <CR>")
-vim.keymap.set("n", "<Leader>tf", ":FloatermToggle <CR>")
-
 -- undotree
 vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle)
 

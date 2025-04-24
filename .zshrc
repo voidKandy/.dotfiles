@@ -3,6 +3,7 @@ alias mybin="~/mybin"
 alias air="~/go/bin/air"
 alias obs="~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Ω"
 alias proj="~/Documents/projects"
+alias z="zoxide"
 
 
 # Homebrew path for ARM mac 
@@ -12,14 +13,19 @@ export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 export LIBTORCH=/opt/homebrew/opt/pytorch
 export LD_LIBRARY_PATH=${LIBTORCH}/lib:$LD_LIBRARY_PATH
 
+export PATH="/Users/ezrafreeman/.local/bin:$PATH"
 # >>> MySQL >>> 
 export PATH=${PATH}:/usr/local/mysql/bin/
 
+# For odin
+export PATH=$HOME/odin:$PATH
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/mambaforge/bin:$PATH
 export PATH=`go env GOPATH`/bin:$PATH
 export PATH=$HOME/mybin:$PATH
+# Mostly for helix
+export PATH=$HOME/language_servers:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -120,3 +126,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
 export PATH="$PATH:/Users/ezrafreeman/.modular/bin"
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+eval "$(zoxide init zsh)"

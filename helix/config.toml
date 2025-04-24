@@ -1,0 +1,27 @@
+# https://docs.helix-editor.com/editor.html
+# Might be fun to try some of these
+# https://www.reddit.com/r/HelixEditor/comments/1i3sbrj/how_are_you_using_the_new_macro_keybindings/?share_id=L6GZTfzu1jBNGRk5n9bAV&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1
+
+theme = "gruvbox_dark_soft"
+
+[editor]
+line-number = "relative"
+mouse = false
+cursorline= true
+# could be a fun way to improve workflow
+# bufferline = "always"
+jump-label-alphabet="jfkdls;aurieowpqnvmcxz"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-p = "@:sh "
+C-t = "@:sh tree -L 2"
+C-o = "@:o "
+"ret" = "goto_word"
